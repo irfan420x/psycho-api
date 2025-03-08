@@ -2,12 +2,17 @@ const express = require('express');
 const app = express();
 const port = 5000;
 
-// আপনার API রুট
+// Root endpoint ("/") - Homepage response
+app.get('/', (req, res) => {
+    res.send('Welcome to my API!');
+});
+
+// API endpoint ("/your-api-endpoint")
 app.get('/your-api-endpoint', (req, res) => {
     res.json({ message: 'API is working!' });
 });
 
-// সার্ভার স্টার্ট
+// Start the server
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);
 });
